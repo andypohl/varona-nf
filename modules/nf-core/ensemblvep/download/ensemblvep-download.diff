@@ -1,0 +1,15 @@
+Changes in module 'nf-core/ensemblvep/download'
+--- modules/nf-core/ensemblvep/download/main.nf
++++ modules/nf-core/ensemblvep/download/main.nf
+@@ -1,6 +1,8 @@
++// Added with "nf-core modules install ensemblvep/download"
++
+ process ENSEMBLVEP_DOWNLOAD {
+     tag "$meta.id"
+-    label 'process_medium'
++    label 'amd64_only'
+ 
+     conda "${moduleDir}/environment.yml"
+     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+
+************************************************************
