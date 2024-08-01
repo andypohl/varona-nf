@@ -1,15 +1,33 @@
 Changes in module 'nf-core/ensemblvep/download'
+--- modules/nf-core/ensemblvep/download/environment.yml
++++ modules/nf-core/ensemblvep/download/environment.yml
+@@ -4,4 +4,4 @@
+   - bioconda
+   - defaults
+ dependencies:
+-  - bioconda::ensembl-vep=111.0
++  - bioconda::ensembl-vep=112.0
+
 --- modules/nf-core/ensemblvep/download/main.nf
 +++ modules/nf-core/ensemblvep/download/main.nf
-@@ -1,6 +1,8 @@
+@@ -1,11 +1,16 @@
 +// Added with "nf-core modules install ensemblvep/download"
++// Check https://biocontainers.pro/tools/ensembl-vep for updates
++// ahead of the next release of nf-core/modules 
 +
  process ENSEMBLVEP_DOWNLOAD {
      tag "$meta.id"
--    label 'process_medium'
+     label 'process_medium'
 +    label 'amd64_only'
  
      conda "${moduleDir}/environment.yml"
      container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+-        'https://depot.galaxyproject.org/singularity/ensembl-vep:111.0--pl5321h2a3209d_0' :
+-        'biocontainers/ensembl-vep:111.0--pl5321h2a3209d_0' }"
++        'https://depot.galaxyproject.org/singularity/ensembl-vep:112.0--pl5321h2a3209d_0' :
++        'biocontainers/ensembl-vep:112.0--pl5321h2a3209d_0' }"
+ 
+     input:
+     tuple val(meta), val(assembly), val(species), val(cache_version)
 
 ************************************************************
