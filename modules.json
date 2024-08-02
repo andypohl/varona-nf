@@ -10,6 +10,25 @@
             "git_sha": "3db4f8488315cd7d7cf3fcb64251f6603210e831",
             "installed_by": ["modules"],
             "patch": "modules/nf-core/ensemblvep/download/ensemblvep-download.diff"
+          },
+          "ensemblvep/vep": {
+            "branch": "master",
+            "git_sha": "e1938f8ecb13b9b82ff488d4b35269c84aa965e8",
+            "installed_by": ["vcf_annotate_ensemblvep"]
+          },
+          "tabix/tabix": {
+            "branch": "master",
+            "git_sha": "0840b387799172e77510393ed09e4d4ec1bc6d7c",
+            "installed_by": ["vcf_annotate_ensemblvep"]
+          }
+        }
+      },
+      "subworkflows": {
+        "nf-core": {
+          "vcf_annotate_ensemblvep": {
+            "branch": "master",
+            "git_sha": "cfd937a668919d948f6fcbf4218e79de50c2f36f",
+            "installed_by": ["subworkflows"]
           }
         }
       }
